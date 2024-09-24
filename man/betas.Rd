@@ -16,13 +16,22 @@ fazer a predição;}
 que serão usadas na predição.}
 }
 \value{
-Relação dos coeficientes e suas estimativas.
+Retorna-se a relação dos coeficientes e suas estimativas.
 }
 \description{
 Encontra os coeficientes na regressão
 linear múltipla,
-\deqn{Y = \beta_{0}+\beta_{1}X_{1}+...+\beta_{p-1}X_{p-1}+\epsilon}.
+\deqn{Y = \beta_{0}+\beta_{1}X_{1}+...+\beta_{p-1}X_{p-1}+\epsilon.}
+Temos, para a equação acima,
+\itemize{
+\item \eqn{Y} é a variável resposta;
+\item \eqn{X_{1},...,X_{p-1}} são as variáveis preditoras;
+\item \eqn{\beta_{0},\beta_{1},...,\beta_{n}} são os coeficientes da regressão; \eqn{\beta_{0}} é o intercepto;
+\item \eqn{\epsilon\sim\mathcal{N}(0,\sigma^{2})} é o erro aleatório independente e identicamente distribuído para toda observação.
+}
 }
 \details{
 É necessário que a matriz de delineamento tenha posto completo.
+
+Verifique se os argumentos da função estão corretamente inseridos. É necessário que as variáveis estejam entre "aspas" (ou seja, char com nome da variável).
 }
