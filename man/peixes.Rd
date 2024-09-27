@@ -3,14 +3,25 @@
 \docType{data}
 \name{peixes}
 \alias{peixes}
-\title{Conjunto de dados do pacote}
+\title{Data to showcase f**k count}
 \format{
-An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 159 rows and 7 columns.
+A data frame with 34 rows and 16 columns.
+\describe{
+\item{Character}{Single value - Roy Kent}
+\item{Episode_order}{The order of episodes from the 1st to the last}
+\item{Season}{The season 1,2 or 3 associated with the count}
+}
+}
+\source{
+Created by Deepsha Menghani by watching the show and counting the number of F**ks used in sentences and as gestures
 }
 \usage{
 peixes
 }
 \description{
-lista de peixe!
+A dataset containing the number of times the word f**k was used in Ted Lasso by Roy Kent.
+}
+\examples{
+data(peixes)
 }
 \keyword{datasets}

@@ -1,0 +1,3 @@
+#' @examples
+#' data(peixes)
+"peixes"
