@@ -2,7 +2,7 @@
 #'@description
 #'Dada uma nova observação, usa o modelo de regressão
 #'estabelecido para predizer o valor da variável resposta,
-#'\deqn{\hat{Y}_{novo}}=X_{novo}\hat{\beta}}
+#'\deqn{\hat{Y}_{novo}=X_{novo}\hat{\beta}}
 #'Temos, para a equação acima,
 #'- \eqn{\hat{Y}_{novo}} é o valor predito para os novos dados com base no modelo;
 #'- \eqn{X_{novo}} é o novo dado inserido;
@@ -24,6 +24,9 @@
 #'
 #'@return
 #'Retorna-se a relação dos valores preditos na mesma ordem que estão as observações.
+#'
+#'#'@examples
+#'predicao(proj2::dados, "y", c("x1", "x2"))
 #'
 #'@export
 

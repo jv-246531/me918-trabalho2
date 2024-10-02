@@ -19,9 +19,20 @@ que serão usadas na predição.}
 }
 \value{
 Retorna-se a relação dos valores preditos na mesma ordem que estão as observações.
+
+#'@examples
+predicao(proj2::dados, "y", c("x1", "x2"))
 }
 \description{
-
+Dada uma nova observação, usa o modelo de regressão
+estabelecido para predizer o valor da variável resposta,
+\deqn{\hat{Y}_{novo}=X_{novo}\hat{\beta}}
+Temos, para a equação acima,
+\itemize{
+\item \eqn{\hat{Y}_{novo}} é o valor predito para os novos dados com base no modelo;
+\item \eqn{X_{novo}} é o novo dado inserido;
+\item \eqn{\hat{\beta}} é o vetor contendo coeficientes estimados.
+}
 }
 \details{
 Verifique se os novos dados estão na ordem em que foram colocados os betas da predição, no argumento variavel_preditoras.

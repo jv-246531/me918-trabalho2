@@ -23,6 +23,9 @@
 #'@return
 #'Retorna-se a relação dos coeficientes e suas estimativas.
 #'
+#'@examples
+#'betas(proj2::dados, "y", c("x1", "x2"))
+#'
 #'@export
 
 
@@ -38,5 +41,7 @@ betas <- function(dados, variavel_resposta, variaveis_preditoras) {
   }
   betas_ <- solve(t(x_) %*% x_,
                   t(x_) %*% dados[[variavel_resposta]])
+
+  colnames(betas_) <- "Estimativa"
   return(betas_)
 }

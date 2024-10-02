@@ -22,10 +22,13 @@
 #'@return
 #'Retorna-se a relação dos valores preditos na mesma ordem que estão as observações.
 #'
+#'@examples
+#'valores_preditos(proj2::dados, "y", c("x1", "x2"))
+#'
 #'@export
 
 valores_preditos <- function(dados, variavel_resposta, variaveis_preditoras) {
   x_ <- matriz_delineamento(dados, variaveis_preditoras)
   betas_ <- betas(dados, variavel_resposta, variaveis_preditoras)
-  return((x_ %*% betas_))
+  return(as.double(x_ %*% betas_))
 }
