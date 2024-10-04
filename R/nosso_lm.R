@@ -1,3 +1,70 @@
+#'@title Regressão Linear Múltipla
+#'@description
+#'Retorna uma lista com diversas informações relacionadas a um modelo de
+#'regressão linear múltipla, construído com base em um banco de dados
+#'e suas variáveis. O modelo é o que segue.
+#'
+#'\deqn{Y=\beta_{0}+\beta_{1}X_{1}+\cdots+\beta_{p-1}X_{p-1}+\epsilon}
+#'
+#'Temos, para a equação acima,
+#'- \eqn{Y} é a variável resposta;
+#'- \eqn{X_{1},...,X_{p-1}} são as variáveis preditoras;
+#'- \eqn{\beta_{0},\beta_{1},...,\beta_{n}} são os coeficientes da regressão; \eqn{\beta_{0}} é o intercepto;
+#'- \eqn{\epsilon\sim\mathcal{N}(0,\sigma^{2})} é o erro aleatório independente e identicamente distribuído para toda observação.
+#'
+#'Além disso, permite utilização de uma série de métodos:
+#'- print;
+#'- plot;
+#'- confint;
+#'- summary;
+#'- predict.
+#'
+#'@details
+#'É necessário que a matriz de delineamento tenha posto completo.
+#'
+#'Verifique se os argumentos da função estão corretamente inseridos. É
+#'necessário que as variáveis estejam entre "aspas" (ou seja, char com
+#'nome da variável).
+#'
+#'Para uso do módulo _predict_, é preciso especificar, em valores numéricos,
+#'os valores da variáveis preditoras na ordem em que aparecem na equação de regressão.
+#'Deste modo, por exemplo, deve ter a inserção correta de 0s e 1s nas variáveis dummy.
+#'
+#'@param dados Banco de dados para análise;
+#'@param variavel_resposta Variável resposta, da qual queremos
+#'fazer a predição;
+#'@param variaveis_preditoras Vetor composto pelas variáveis
+#'que serão usadas na predição.
+#'
+#'@return
+#'Retorna-se um objeto do tipo "nosso_lm", contendo uma lista de informações
+#'que podem ser obtidas ao estabeler o modelo. Nesta lista, encontra-se:
+#'- .$betas: Relação com estimativas para os coeficientes da regressão;
+#'- .$qme: Quadrado médio do erro, estimador não viesado para variância do erro normal;
+#'- .$r2_ajustado: Coeficiente de determinação ajustado pela quantidade de preditoras;
+#'- .$r2: Coeficiente de determinação sem ajuste;
+#'- .$residuos: Resíduos obtidos pela diferença entre o que foi observado e o que foi predito no modelo;
+#'- .$semi_studentizado: Resíduos semi_studentizados;
+#'- .$studentizado: Resíduos studentizados;
+#'- .$valores_preditos: Predição dos valores da variável resposta em relação ao modelo construído;
+#'- .$aic_do_modelo: Critério de informação de Akaike para o modelo, com \eqn{k=2};
+#'- .$matriz_delineamento: Matriz com informações sobre as variáveis preditoras;
+#'- .$variavel_resposta: Lista contendo nome da variável resposta e seus valores.
+#'
+#'@examples
+#'regressao <- nosso_lm(proj2::dados, "y", c("x1", "x2"))
+#'plot(regressao)
+#'confint(regressao)
+#'summary(regressao)
+#'predict(regressao, observacao = c(13.82, 62.17))
+#'
+#'regressao <- nosso_lm(proj2::categoricas, "y", c("fator1", "fator2", "numerica"))
+#'plot(regressao)
+#'confint(regressao)
+#'summary(regressao)
+#'predict(regressao, observacao = c("b", "c", 5)) # vai dar errado
+#'predict(regressao, observacao = c(1,0,0,0,1,0,5)) # vai dar certo: segue a relação dos betas
+#'
 #'@export
 
 nosso_lm <- function(dados,
@@ -28,10 +95,13 @@ nosso_lm <- function(dados,
                            valores_preditos = valores_preditos(dados,
                                                                variavel_resposta,
                                                                variaveis_preditoras),
+                           aic_do_modelo = aic_do_modelo(dados,
+                                                         variavel_resposta,
+                                                         variaveis_preditoras),
                            matriz_delineamento = matriz_delineamento(dados,
                                                                      variaveis_preditoras),
-                           variavel_resposta = variavel_resposta,
-                           variaveis_preditoras = variaveis_preditoras),
+                           variavel_resposta = list(nome = variavel_resposta,
+                                                    valores = dados[[variavel_resposta]])),
                       class = "nosso_lm")
 
   return(objeto)
@@ -40,7 +110,7 @@ nosso_lm <- function(dados,
 #'@export
 print.nosso_lm <- function(x, ...) {
   cat("Regressão linear múltipla realizada para\n")
-  cat(paste0(x$variavel_resposta, " ~ ", paste(x$variaveis_preditoras, collapse = " + ")), "\n")
+  cat(paste0(x$variavel_resposta[["nome"]], " ~ ", paste(rownames(x$betas)[-1], collapse = " + ")), "\n")
 }
 
 #'@export
@@ -107,4 +177,9 @@ summary.nosso_lm <- function(x, ...) {
                      lower.tail = FALSE, df = nrow(x$matriz_delineamento)-ncol(x$matriz_delineamento))
       )
     )
+}
+
+#'@export
+predict.nosso_lm <- function(x, observacao, ...) {
+    return(as.double(c(1,observacao) %*% x$betas))
 }

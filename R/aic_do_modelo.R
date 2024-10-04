@@ -17,7 +17,7 @@
 #'@return
 #'Retorna o valor do Critério de Informação de Akaike (AIC) com base na variável resposta e nas variáveis preditoras do modelo.
 #'
-#'#'@examples
+#'@examples
 #'aic_do_modelo(proj2::dados, "y", c("x1", "x2"))
 #'aic_do_modelo(proj2::dados, "y", c("x1", "x2"), bayesiano = TRUE)
 #'

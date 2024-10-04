@@ -26,7 +26,7 @@ grafico_residuos <- function(dados,
                              variaveis_preditoras,
                              studentizado = "nao") {
 
-  library(ggplot2)
+  suppressWarnings( library(ggplot2) )
 
   preditos <- valores_preditos(dados, variavel_resposta, variaveis_preditoras)
   if(studentizado == "nao") {

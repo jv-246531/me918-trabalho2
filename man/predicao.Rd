@@ -19,9 +19,6 @@ que serão usadas na predição.}
 }
 \value{
 Retorna-se a relação dos valores preditos na mesma ordem que estão as observações.
-
-#'@examples
-predicao(proj2::dados, "y", c("x1", "x2"))
 }
 \description{
 Dada uma nova observação, usa o modelo de regressão
@@ -39,5 +36,17 @@ Verifique se os novos dados estão na ordem em que foram colocados os betas da p
 
 É necessário que a matriz de delineamento tenha posto completo.
 
-Verifique se os argumentos da função estão corretamente inseridos. É necessário que as variáveis estejam entre "aspas" (ou seja, char com nome da variável).
+Verifique se os argumentos da função estão corretamente inseridos. É necessário
+que as variáveis estejam entre "aspas" (ou seja, char com nome da variável).
+
+Para uso da função, é preciso especificar, em valores numéricos,
+os valores da variáveis preditoras na ordem em que aparecem na equação de regressão.
+Deste modo, por exemplo, deve ter a inserção correta de 0s e 1s nas variáveis dummy.
+}
+\examples{
+predicao(proj2::dados, "y", c("x1", "x2"), observacao = c(13.82, 62.17))
+
+predicao(proj2::categoricas, "y", c("fator1", "fator2", "numerica"), observacao = c("b", "c", 5)) # vai dar errado
+predicao(proj2::categoricas, "y", c("fator1", "fator2", "numerica"), observacao = c(1,0,0,0,1,0,5)) # vai dar certo: segue a relação dos betas
+
 }

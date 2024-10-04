@@ -30,8 +30,14 @@
 
 
 betas <- function(dados, variavel_resposta, variaveis_preditoras) {
+
+  if (any(!complete.cases(dados[,c(variavel_resposta, variaveis_preditoras)]))) {
+    stop("Variáveis escolhidas do conjunto de dados contêm entradas NA. Para usar a função, é necessário removê-las.")
+  }
+
   x_ <- matriz_delineamento(dados = dados,
                             variaveis = variaveis_preditoras)
+
   if (det(t(x_) %*% x_) == 0) {
     stop("Matriz não tem posto completo. Retire algumas das variáveis e tente novamente.")
   }
@@ -39,6 +45,7 @@ betas <- function(dados, variavel_resposta, variaveis_preditoras) {
     stop("1) Variável resposta precisa ser numérica. Reveja sua entrada.
 2) Verifique se a variável resposta está no banco de dados, e se está escrita corretamente (entre \"aspas\").")
   }
+
   betas_ <- solve(t(x_) %*% x_,
                   t(x_) %*% dados[[variavel_resposta]])
 

@@ -36,10 +36,12 @@ qme <- function(dados,
                                 variaveis_preditoras))
 
   return(
-    sum(
-      (residuos(dados,
-               variavel_resposta,
-               variaveis_preditoras))^2
-    )/(nrow(dados)-(p))
+    ifelse(nrow(dados) > p,
+           sum(
+             (residuos(dados,
+                       variavel_resposta,
+                       variaveis_preditoras))^2
+             )/(nrow(dados)-(p)),
+           0)
   )
 }

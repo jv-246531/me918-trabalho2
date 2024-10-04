@@ -2,6 +2,7 @@
 
 S3method(confint,nosso_lm)
 S3method(plot,nosso_lm)
+S3method(predict,nosso_lm)
 S3method(print,nosso_lm)
 S3method(summary,nosso_lm)
 export(aic_do_modelo)

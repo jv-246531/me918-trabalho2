@@ -2,7 +2,7 @@
 #'@description
 #'Calcula os resíduos studentizados de um modelo de regressão com base na variável resposta e nas variáveis preditoras.
 #'A fórmula utilizada é:
-#'\deqn{r_i^* = \dfrac{e_i}{\sqrt{QME \cdot (1 - h_i)}}}
+#'\deqn{r_i^* = \dfrac{e_i}{\sqrt{QME \cdot (1 - h_{ii})}}}
 #'onde:
 #'- \eqn{e_i} é o resíduo da observação \eqn{i};
 #'- \eqn{QME} é o quadrado médio do erro do modelo;
@@ -25,11 +25,11 @@ studentizado <- function(dados,
                          variavel_resposta,
                          variaveis_preditoras) {
   return(
-    residuos(dados,
+    as.double(residuos(dados,
              variavel_resposta,
              variaveis_preditoras)/sqrt(qme(dados,
                                             variavel_resposta,
                                             variaveis_preditoras)*(1-alavanca(dados,
-                                                                              variaveis_preditoras)))
+                                                                              variaveis_preditoras))))
   )
 }

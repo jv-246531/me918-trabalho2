@@ -25,7 +25,7 @@ predito_observado <- function(dados,
                               variaveis_preditoras,
                               reta = TRUE) {
 
-  library(ggplot2)
+  suppressWarnings( library(ggplot2) )
 
   preditos <- valores_preditos(dados, variavel_resposta, variaveis_preditoras)
   valores <- data.frame(observados = dados[[variavel_resposta]],

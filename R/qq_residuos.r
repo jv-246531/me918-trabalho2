@@ -24,7 +24,7 @@ qq_residuos <- function(dados,
                         variaveis_preditoras,
                         reta = TRUE) {
 
-  library(ggplot2)
+  suppressWarnings( library(ggplot2) )
 
   residuos_ <- data.frame(residuo = studentizado(dados, variavel_resposta, variaveis_preditoras))
 
