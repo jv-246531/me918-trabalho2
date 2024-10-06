@@ -1,49 +1,42 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # proj2
 
-projeto muito legal cê loko vei
+<!-- badges: start -->
+<!-- badges: end -->
 
-## Installation
+O objetivo do pacote *proj2* é ajustar um modelo de regressão linear,
+realizar predições e análises residuais, com estimativas dos
+coeficientes (betas); efetuar comparações entre os valores preditos e
+observados e inserir ferramentes que permitam a análise detalhada dos
+resíduos do modelo ajustado, incluindo, por exemplo, resíduos
+studentizados e gráficos que permitem verificar normaldiade dos
+resíduos.
 
-You can install the development version of proj2 from
-[GitHub](https://github.com/) with:
+## Instalação
+
+Você pode instalar a versão de desenvolvimento do pacote proj2
+diretamente do GitHub com:
 
 ``` r
-# install.packages("pak")
-pak::pak("jv-246531/me918-trabalho2")
+install.packages("devtools")
+devtools::install_github("jv-246531/me918-trabalho2")
 ```
 
-## Example
+## Exemplo
 
-This is a basic example which shows you how to solve a common problem:
+Aqui está um exemplo básico de como ajustar um modelo de regressão
+linear usando o `proj2`:
 
 ``` r
 library(proj2)
-## basic example code
+
+dados = dados
+variavel_resposta = "y"
+variaveis_preditoras = c("x1", "x2")
+
+# Valores preditos para a variável resposta
+valores_preditos <- proj2::valores_preditos(dados, variavel_resposta, variaveis_preditoras)
+
+# Resíduos obtidos
+residuos_obtidos <- proj2::residuos(dados, variavel_resposta, variaveis_preditoras)
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.

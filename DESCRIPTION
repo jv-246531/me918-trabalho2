@@ -1,17 +1,13 @@
 Package: proj2
-Title: What the Package Does (One Line, Title Case)
+Title: Análise de Regressão Linear: Modelagem, Predição e Análise Residual
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: MIT + file LICENSE
+    c(person("João Vitor Vieira", "de Castro", email = "j246531@dac.unicamp.br", role = c("aut", "cre")),
+    person("Gabriella Moura", email = "g184595@dac.unicamp.br", role = ("aut")),
+    person("Henrique Anunciação Velloso", "Silva", email = "h248214@dac.unicamp.br", role = c("aut")),
+    person("Vitória Linda", "da Silva Oliveira", email = "v212826@dac.unicamp.br", role = c("aut")))
+Description: Este pacote fornece ferramentas para ajuste de modelos de regressão linear minimizando o erro quadrático. O pacote inclui ferramentas para estimação dos coeficientes (betas), predição de valores e uma análise detalhada dos resíduos para avaliar a qualidade do ajuste, dentre cálculo de resíduos e gráficos úteis.
+License: MIT
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Depends: 
-    R (>= 2.10)
-LazyData: true
-Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
