@@ -12,6 +12,29 @@ resíduos do modelo ajustado, incluindo, por exemplo, resíduos
 studentizados e gráficos que permitem verificar normaldiade dos
 resíduos.
 
+Funções disponíveis (utilize `help(`nome da função`)` para verificar
+como funciona e o que obtém-se como resutlado):
+
+- aic_do_modelo
+- betas
+- grafico_residuos
+- nosso_lm
+- predicao
+- predito_observado
+- qme
+- qq_residuos
+- r2
+- r2_ajustado
+- residuos
+- semi_studentizado
+- studentizado
+- valores_preditos
+
+Conjuntos de dados disponíveis, gerados por simulação:
+
+- categoricas
+- dados
+
 ## Instalação
 
 Você pode instalar a versão de desenvolvimento do pacote proj2
@@ -35,8 +58,12 @@ variavel_resposta = "y"
 variaveis_preditoras = c("x1", "x2")
 
 # Valores preditos para a variável resposta
-valores_preditos <- proj2::valores_preditos(dados, variavel_resposta, variaveis_preditoras)
+valores_preditos <- proj2::valores_preditos(dados,
+                                            variavel_resposta,
+                                            variaveis_preditoras)
 
 # Resíduos obtidos
-residuos_obtidos <- proj2::residuos(dados, variavel_resposta, variaveis_preditoras)
+residuos_obtidos <- proj2::residuos(dados,
+                                    variavel_resposta,
+                                    variaveis_preditoras)
 ```
