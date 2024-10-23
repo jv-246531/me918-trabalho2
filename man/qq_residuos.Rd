@@ -27,6 +27,6 @@ Com ajuda do pacote \emph{ggplot2}, cria um gráfico QQ-Plot dos resíduos do mo
 Verifique se os argumentos da função estão corretamente inseridos. É necessário que as variáveis estejam entre "aspas" (ou seja, char com nome da variável).
 }
 \examples{
-qq_residuos(proj2::dados, "y", c("x1", "x2"))
+qq_residuos(regressaolinear::dados, "y", c("x1", "x2"))
 
 }

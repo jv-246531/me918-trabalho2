@@ -32,10 +32,10 @@
 #'Retorna-se a relação dos valores preditos na mesma ordem que estão as observações.
 #'
 #'@examples
-#'predicao(proj2::dados, "y", c("x1", "x2"), observacao = c(13.82, 62.17))
+#'predicao(regressaolinear::dados, "y", c("x1", "x2"), observacao = c(13.82, 62.17))
 #'
-#'predicao(proj2::categoricas, "y", c("fator1", "fator2", "numerica"), observacao = c("b", "c", 5)) # vai dar errado
-#'predicao(proj2::categoricas, "y", c("fator1", "fator2", "numerica"), observacao = c(1,0,0,0,1,0,5)) # vai dar certo: segue a relação dos betas
+#'predicao(regressaolinear::categoricas, "y", c("fator1", "fator2", "numerica"), observacao = c("b", "c", 5)) # vai dar errado
+#'predicao(regressaolinear::categoricas, "y", c("fator1", "fator2", "numerica"), observacao = c(1,0,0,0,1,0,5)) # vai dar certo: segue a relação dos betas
 #'
 #'@export
 

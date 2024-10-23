@@ -15,7 +15,7 @@
 #'Retorna-se um gráfico de dispersão das variáveis respostas preditas no modelo v.s. observadas.
 #'
 #'@examples
-#'predito_observado(proj2::dados, "y", c("x1", "x2"))
+#'predito_observado(regressaolinear::dados, "y", c("x1", "x2"))
 #'
 #'@export
 

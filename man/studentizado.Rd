@@ -31,6 +31,6 @@ onde:
 Certifique-se de que as variáveis estão corretamente especificadas e que os dados não contêm valores ausentes.
 }
 \examples{
-studentizado(proj2::dados, "y", c("x1", "x2"))
+studentizado(regressaolinear::dados, "y", c("x1", "x2"))
 
 }

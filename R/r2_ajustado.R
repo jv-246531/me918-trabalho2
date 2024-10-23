@@ -21,7 +21,7 @@
 #'Retorna-se o coeficiente de determinação ajustado (\eqn{R_{aj}^2}) com base na variável resposta e variáveis preditoras do modelo.
 #'
 #'@examples
-#'r2_ajustado(proj2::dados, "y", c("x1", "x2"))
+#'r2_ajustado(regressaolinear::dados, "y", c("x1", "x2"))
 #'
 #'@export
 

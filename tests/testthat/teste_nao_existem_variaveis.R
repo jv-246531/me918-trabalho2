@@ -1,40 +1,40 @@
 test_that("Testes relacionados com falta de variáveis nos argumentos da função", {
   expect_error(
-    betas(proj2::dados,
+    betas(regressaolinear::dados,
           "y",
           "x")) # não existe coluna com nome x no conjunto de dados
 
   expect_error(
-    residuos(proj2::dados,
+    residuos(regressaolinear::dados,
              "y",
              c("x1", "x3"))) # nao existe coluna com nome x3 no conjunto de dados
 
   expect_error(
-    valores_preditos(proj2::dados,
+    valores_preditos(regressaolinear::dados,
                      "y",
                      c("x1, x2"))) # escrita errada do vetor das variaveis preditoras
 
   expect_error(
-    nosso_lm(proj2::dados,
+    nosso_lm(regressaolinear::dados,
              "y",
              c("x1", "x2", "x3"))) # colocou-se variaveis que nao existem
 
   expect_error(
-    studentizado(proj2::dados,
+    studentizado(regressaolinear::dados,
                  "rato",
                  c("x1", "x2"))) # nao existe coluna com nome rato no conjunto de dados
 
   expect_error(
-    semi_studentizado(proj2::dados_,
+    semi_studentizado(regressaolinear::dados_,
                       "y",
                       c("x1", "x2"))) # nao existe conjunto dados_ no pacote
 
   expect_error(
-    aic_do_modelo(dados = proj2::dados,
+    aic_do_modelo(dados = regressaolinear::dados,
                   variaveis_preditoras = c("x1", "x2"))) # nao especificou variavel resposta
 
   expect_error(
-    r2(dados = proj2::dados,
+    r2(dados = regressaolinear::dados,
        variavel_resposta = "y")) # nao especificou variaveis preditoras
 
   expect_error(
@@ -54,12 +54,12 @@ test_that("Testes relacionados com falta de variáveis nos argumentos da funçã
           "x")) # contém NA na variável resposta escolhida
 
   expect_error(
-    nosso_lm(proj2::dados,
+    nosso_lm(regressaolinear::dados,
              y,
              c("x1", "x2"))) # variavel resposta nao está entre aspas
 
   expect_error(
-    nosso_lm(proj2::dados,
+    nosso_lm(regressaolinear::dados,
              "y",
              c(x1, x2))) # variaveis preditoras nao estão entre aspas
 }

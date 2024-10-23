@@ -15,7 +15,7 @@
 #'Retorna-se um gráfico QQ-plot dos resíduos do modelo de regressão.
 #'
 #'@examples
-#'qq_residuos(proj2::dados, "y", c("x1", "x2"))
+#'qq_residuos(regressaolinear::dados, "y", c("x1", "x2"))
 #'
 #'@export
 

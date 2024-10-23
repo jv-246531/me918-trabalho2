@@ -1,9 +1,9 @@
-Package: proj2
+Package: regressaolinear
 Title: Análise de Regressão Linear: Modelagem, Predição e Análise Residual
-Version: 0.0.0.9000
+Version: 0.0.1.9000
 Authors@R: 
     c(person("João Vitor Vieira", "de Castro", email = "j246531@dac.unicamp.br", role = c("aut", "cre")),
-    person("Gabriella Moura", email = "g184595@dac.unicamp.br", role = ("aut")),
+    person("Gabriella", "Moura", email = "g184595@dac.unicamp.br", role = c("aut")),
     person("Henrique Anunciação Velloso", "Silva", email = "h248214@dac.unicamp.br", role = c("aut")),
     person("Vitória Linda", "da Silva Oliveira", email = "v212826@dac.unicamp.br", role = c("aut")))
 Description: Este pacote fornece ferramentas para ajuste de modelos de regressão linear minimizando o erro quadrático. O pacote inclui ferramentas para estimação dos coeficientes (betas), predição de valores e uma análise detalhada dos resíduos para avaliar a qualidade do ajuste, dentre cálculo de resíduos e gráficos úteis.
@@ -13,4 +13,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Depends: 
     R (>= 2.10)
+Imports: 
+    ggplot2
 LazyData: true

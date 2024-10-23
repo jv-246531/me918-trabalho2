@@ -17,7 +17,7 @@
 #'Retorna um vetor contendo os resíduos studentizados.
 #'
 #'@examples
-#'studentizado(proj2::dados, "y", c("x1", "x2"))
+#'studentizado(regressaolinear::dados, "y", c("x1", "x2"))
 #'
 #'@export
 

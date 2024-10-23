@@ -24,7 +24,7 @@
 #'Retorna-se a relação dos resíduos na mesma ordem que estão as observações.
 #'
 #'@examples
-#'residuos(proj2::dados, "y", c("x1", "x2"))
+#'residuos(regressaolinear::dados, "y", c("x1", "x2"))
 #'
 #'@export
 

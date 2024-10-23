@@ -44,9 +44,9 @@ os valores da variáveis preditoras na ordem em que aparecem na equação de reg
 Deste modo, por exemplo, deve ter a inserção correta de 0s e 1s nas variáveis dummy.
 }
 \examples{
-predicao(proj2::dados, "y", c("x1", "x2"), observacao = c(13.82, 62.17))
+predicao(regressaolinear::dados, "y", c("x1", "x2"), observacao = c(13.82, 62.17))
 
-predicao(proj2::categoricas, "y", c("fator1", "fator2", "numerica"), observacao = c("b", "c", 5)) # vai dar errado
-predicao(proj2::categoricas, "y", c("fator1", "fator2", "numerica"), observacao = c(1,0,0,0,1,0,5)) # vai dar certo: segue a relação dos betas
+predicao(regressaolinear::categoricas, "y", c("fator1", "fator2", "numerica"), observacao = c("b", "c", 5)) # vai dar errado
+predicao(regressaolinear::categoricas, "y", c("fator1", "fator2", "numerica"), observacao = c(1,0,0,0,1,0,5)) # vai dar certo: segue a relação dos betas
 
 }

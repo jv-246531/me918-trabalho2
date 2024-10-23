@@ -68,13 +68,13 @@ os valores da variáveis preditoras na ordem em que aparecem na equação de reg
 Deste modo, por exemplo, deve ter a inserção correta de 0s e 1s nas variáveis dummy.
 }
 \examples{
-regressao <- nosso_lm(proj2::dados, "y", c("x1", "x2"))
+regressao <- nosso_lm(regressaolinear::dados, "y", c("x1", "x2"))
 plot(regressao)
 confint(regressao)
 summary(regressao)
 predict(regressao, observacao = c(13.82, 62.17))
 
-regressao <- nosso_lm(proj2::categoricas, "y", c("fator1", "fator2", "numerica"))
+regressao <- nosso_lm(regressaolinear::categoricas, "y", c("fator1", "fator2", "numerica"))
 plot(regressao)
 confint(regressao)
 summary(regressao)

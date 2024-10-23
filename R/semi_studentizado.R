@@ -16,7 +16,7 @@
 #'Retorna um vetor contendo os resíduos semi-studentizados.
 #'
 #'@examples
-#'semi_studentizado(proj2::dados, "y", c("x1", "x2"))
+#'semi_studentizado(regressaolinear::dados, "y", c("x1", "x2"))
 #'
 #'@export
 

@@ -23,7 +23,7 @@
 #'Retorna-se a relação dos valores preditos na mesma ordem que estão as observações.
 #'
 #'@examples
-#'valores_preditos(proj2::dados, "y", c("x1", "x2"))
+#'valores_preditos(regressaolinear::dados, "y", c("x1", "x2"))
 #'
 #'@export
 

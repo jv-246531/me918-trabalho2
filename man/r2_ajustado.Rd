@@ -33,6 +33,6 @@ Temos, para a equação acima,
 Verifique se os argumentos da função estão corretamente inseridos. É necessário que as variáveis estejam entre "aspas" (ou seja, char com nome da variável).
 }
 \examples{
-r2_ajustado(proj2::dados, "y", c("x1", "x2"))
+r2_ajustado(regressaolinear::dados, "y", c("x1", "x2"))
 
 }

@@ -40,7 +40,7 @@ onde:
 A função oferece a opção de usar o Critério de Informação Bayesiano (BIC), ajustando o valor de penalização com base no logaritmo do número de observações.
 }
 \examples{
-aic_do_modelo(proj2::dados, "y", c("x1", "x2"))
-aic_do_modelo(proj2::dados, "y", c("x1", "x2"), bayesiano = TRUE)
+aic_do_modelo(regressaolinear::dados, "y", c("x1", "x2"))
+aic_do_modelo(regressaolinear::dados, "y", c("x1", "x2"), bayesiano = TRUE)
 
 }

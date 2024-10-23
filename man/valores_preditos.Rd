@@ -35,6 +35,6 @@ Temos, para a equação acima,
 Verifique se os argumentos da função estão corretamente inseridos. É necessário que as variáveis estejam entre "aspas" (ou seja, char com nome da variável).
 }
 \examples{
-valores_preditos(proj2::dados, "y", c("x1", "x2"))
+valores_preditos(regressaolinear::dados, "y", c("x1", "x2"))
 
 }

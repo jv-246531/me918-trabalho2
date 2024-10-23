@@ -19,7 +19,7 @@
 #'Retorna-se o coeficiente de determinação (\eqn{R^2}) com base na variável resposta e variáveis preditoras do modelo.
 #'
 #'@examples
-#'r2(proj2::dados, "y", c("x1", "x2"))
+#'r2(regressaolinear::dados, "y", c("x1", "x2"))
 #'
 #'@export
 

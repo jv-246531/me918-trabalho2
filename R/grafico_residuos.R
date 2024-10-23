@@ -16,7 +16,7 @@
 #'Retorna-se um gráfico de dispersão das variáveis preditas v.s. observadas.
 #'
 #'@examples
-#'grafico_residuos(proj2::dados, "y", c("x1", "x2"), studentizado = "sim")
+#'grafico_residuos(regressaolinear::dados, "y", c("x1", "x2"), studentizado = "sim")
 #'
 #'@export
 

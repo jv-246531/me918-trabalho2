@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(proj2)
+library(regressaolinear)
 
-test_check("proj2")
+test_check("regressaolinear")

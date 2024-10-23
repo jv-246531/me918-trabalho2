@@ -24,7 +24,7 @@
 #'Retorna-se a relação dos coeficientes e suas estimativas.
 #'
 #'@examples
-#'betas(proj2::dados, "y", c("x1", "x2"))
+#'betas(regressaolinear::dados, "y", c("x1", "x2"))
 #'
 #'@export
 

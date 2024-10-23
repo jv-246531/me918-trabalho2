@@ -22,7 +22,7 @@
 #'Retorna-se o valor do Quadrado Médio do Erro.
 #'
 #'@examples
-#'qme(proj2::dados, "y", c("x1", "x2"))
+#'qme(regressaolinear::dados, "y", c("x1", "x2"))
 #'
 #'@export
 
